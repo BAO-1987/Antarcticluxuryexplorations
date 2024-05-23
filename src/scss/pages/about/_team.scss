@@ -1,0 +1,48 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins" as *;
+
+.team {
+  padding: 86px 0 150px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  &__desc {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 10px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 386px;
+    background-color: var(--color-white);
+  }
+
+  span {
+    font-weight: var(--fw-500);
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-gray-300);
+  }
+
+  h2 {
+    margin-bottom: 56px;
+  }
+
+  h3 {
+    font-weight: var(--fw-500);
+    font-size: 25px;
+    color: var(--color-black);
+  }
+}

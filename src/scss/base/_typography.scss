@@ -1,0 +1,48 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+h1,
+h2,
+h3 {
+  overflow: hidden;
+  font-weight: var(--fw-400);
+  font-size: clamp(55px, 0.625rem + 12.5vi, 190px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+h2,
+.title {
+  margin-bottom: 16px;
+  font-size: clamp(45px, 1.6667rem + 5.0926vi, 100px);
+  line-height: 1.08;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-size: clamp(1.25rem, 1rem + 1.1111vi, 2rem);
+  line-height: 1.2;
+  text-align: left;
+  color: var(--color-blue-400);
+}
+
+h3 {
+  font-size: clamp(1.125rem, 00.875rem + 1.1111vi, 30px);
+  line-height: 1.1;
+  text-transform: none;
+}
+
+p {
+  font-size: 18px;
+}
+
+.subtext {
+  font-size: clamp(16px, 0.9167rem + 0.3704vi, 21px);
+  color: var(--color-gray-50);
+  text-transform: uppercase;
+
+  &--second {
+    font-family: var(--font-family-secondary);
+  }
+}

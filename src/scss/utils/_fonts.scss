@@ -1,0 +1,4 @@
+@use "./mixins/font-face" as *;
+@include font-woff("Satoshi", "../fonts/Satoshi-Regular", 400, normal);
+
+@include font-woff("Satoshi", "../fonts/Satoshi-Medium", 500, normal);

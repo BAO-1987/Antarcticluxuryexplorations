@@ -1,0 +1,76 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.contacts {
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-white);
+      opacity: 0.2;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 438px;
+
+    label {
+      border: 0;
+      width: 100%;
+    }
+
+    input {
+      overflow: hidden;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 9px 19px;
+      width: 100%;
+      max-width: 100%;
+      color: var(--color-gray-50);
+      background-color: transparent;
+
+      &::placeholder {
+        font-size: 14px;
+        color: var(--color-gray-50);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .subtext {
+    width: 100%;
+    max-width: 610px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: clamp(35px, 0.8333rem + 6.0185vi, 100px);
+    line-height: 1.05;
+  }
+
+  @include media(tablet) {
+  }
+
+  @include media(mobile-l) {
+    input,
+    textarea {
+      padding: 16px;
+    }
+
+    textarea {
+      min-height: 130px;
+    }
+  }
+}
