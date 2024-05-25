@@ -1,51 +1,71 @@
-@use "../../utils/functions/" as *;
-@use "../../utils/mixins" as *;
+@use "../../utils/functions/"as *;
+@use "../../utils/mixins"as *;
 
 .choose {
   padding-bottom: 100px;
 
-  &__title {
-    margin-bottom: 52px;
-  }
+
 
   &__item {
-    counter-increment: adv-counter;
     position: relative;
-    padding: 60px 0;
+    padding: 40px 30px;
+    backdrop-filter: blur(24px);
+    background-color: rgba(255, 255, 255, 0.2);
 
     &::before {
-      content: counter(adv-counter, decimal-leading-zero);
-      position: absolute;
-      font-size: clamp(25px, 0.2083rem + 4.6296vi, 70px);
-      left: 0;
-      line-height: 1.1;
-    }
-
-    &::after {
       content: "";
       position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: var(--color-white);
-      opacity: 0.2;
+      top: 55px;
+      left: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('../images/icons/expert.svg');
+      width: 108px;
+      height: 108px;
     }
+
+    &--small {
+      background-color: rgba(255, 255, 255, 0.1);
+
+      &::before {
+        background-image: url('../images/icons/small.svg');
+      }
+    }
+
+    &--travel {
+      background-color: rgba(255, 255, 255, 0.05);
+
+      &::before {
+        background-image: url('../images/icons/travel.svg');
+      }
+    }
+
+    &--luxurius {
+      background-color: rgba(255, 255, 255, 0.03);
+
+      &::before {
+        background-image: url('../images/icons/luxurius.svg');
+      }
+    }
+
 
   }
 
   &__desc {
-    padding-left: 155px;
-  }
-
-  h2 {
-    margin-bottom: 0;
-    line-height: 1.8;
+    padding-left: 140px;
   }
 
   h3 {
-    margin-bottom: 48px;
-    font-size: clamp(25px, 0.2083rem + 4.6296vi, 70px);
+    margin-bottom: 25px;
   }
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+
+
 
   @include media(tablet) {
     &__title {

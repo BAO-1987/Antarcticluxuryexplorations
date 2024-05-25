@@ -1,48 +1,46 @@
-@use "../utils/functions/" as *;
-@use "../utils/mixins/" as *;
+@use "../utils/functions/"as *;
+@use "../utils/mixins/"as *;
 
 h1,
 h2,
-h3 {
+h3,
+.slogan {
   overflow: hidden;
+  margin-bottom: 32px;
+  font-family: var(--font-family-secondary);
   font-weight: var(--fw-400);
-  font-size: clamp(55px, 0.625rem + 12.5vi, 190px);
+  font-size: clamp(40px, 0.8333rem + 7.4074vi, 120px);
   line-height: 1.2;
-  letter-spacing: -0.01em;
   text-transform: uppercase;
+
+  span {
+    color: var(--color-blue-300);
+  }
 }
 
-h2,
-.title {
-  margin-bottom: 16px;
-  font-size: clamp(45px, 1.6667rem + 5.0926vi, 100px);
-  line-height: 1.08;
-}
-
-.title {
-  margin-bottom: 24px;
-  font-size: clamp(1.25rem, 1rem + 1.1111vi, 2rem);
-  line-height: 1.2;
-  text-align: left;
-  color: var(--color-blue-400);
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(30px, 1.3333rem + 2.4074vi, 56px);
+  line-height: 1.21;
 }
 
 h3 {
-  font-size: clamp(1.125rem, 00.875rem + 1.1111vi, 30px);
-  line-height: 1.1;
-  text-transform: none;
-}
-
-p {
-  font-size: 18px;
+  margin-bottom: 16px;
+  font-size: clamp(20px, 0.5rem + 1.6667vi, 32px);
+  line-height: 1.18;
 }
 
 .subtext {
   font-size: clamp(16px, 0.9167rem + 0.3704vi, 21px);
-  color: var(--color-gray-50);
-  text-transform: uppercase;
+}
 
-  &--second {
-    font-family: var(--font-family-secondary);
-  }
+.slogan {
+  display: block;
+  margin-bottom: 32px;
+   font-family: var(--font-family-primary);
+  font-size: clamp(18px, 1rem + 0.5556vi, 24px);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-blue-300);
 }

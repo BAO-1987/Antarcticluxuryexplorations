@@ -1,53 +1,48 @@
-@use "../utils/functions/" as *;
-@use "../utils/mixins/" as *;
+@use "../utils/functions/"as *;
+@use "../utils/mixins/"as *;
 
 .nav {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 
   &__inner {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-end;
     width: 100%;
   }
 
   &__list {
     display: flex;
-    flex-direction: column;
-    margin: 0  auto;
-    padding-left: 60px;
+    margin: 0 auto;
   }
 
   &__item {
     &:not(:last-of-type) {
-      margin-bottom: 8px;
+      margin-right: 24px;
     }
   }
 
   &__link {
-    font-weight: var(--fw-500);
-    font-size: 16px;
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    transition: opacity 0.3s linear;
+    line-height: 1.62;
+    transition: color 0.3s linear;
 
     &:hover {
       color: var(--color-blue-300);
     }
 
     &.true {
-      opacity: 0.5;
+      color: var(--color-blue-300);
     }
   }
 
   &__btns {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 31px;
   }
 
 

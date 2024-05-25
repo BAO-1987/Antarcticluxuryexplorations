@@ -3,15 +3,13 @@
 
 .header {
   position: fixed;
-  top: 50px;
+  top: 0;
   z-index: 10;
-  padding: 0;
+  padding: 26px 0;
   width: 100%;
   background-color: transparent;
   transition-property: background-color, transform;
   transition-duration: 0.25s;
-
-
 
   &.hide {
     transform: translateY(-200%);

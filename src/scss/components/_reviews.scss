@@ -3,69 +3,30 @@
 @use "../utils/mixins/" as *;
 
 .reviews {
-  padding-bottom: 165px;
-
 
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
     width: 100%;
     max-width: 947px;
-    margin: 0 auto 131px;
-    gap: 38px;
+    gap: 30px;
+  }
+ 
+
+  li {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 30px;
   }
 
-  &__item {
-    &:first-of-type {
-      translate: 0 54px;
-    }
-  }
 
-  &__desc {
-    position: absolute;
-    bottom: 48px;
-    left: 50px;
-    right: 50px;
-    width: 100%;
-    max-width: 354px;
-  }
+h3 {
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
 
-  .subtext {
-    width: 100%;
-    max-width: 712px;
-    translate: 192px 0;
-  }
 
-  h2 {
-    margin-bottom: 20px;
-    font-size: clamp(25px, -0.8333rem + 10.6481vi, 140px);
-  }
-
-  h3 {
-    margin-bottom: 32px;
-    text-transform: uppercase;
-  }
-
-  @include media(tablet) {
-    &__title {
-      margin-bottom: 30px;
-    }
-
-    &__author {
-      margin: 0 auto;
-      max-width: 100%;
-    }
-
-    li {
-      grid-template-columns: 1fr;
-      padding: 16px;
-      gap: 25px;
-    }
-  }
-
-  @include media(mobile-m) {
-    &__list {
-      grid-template-columns: 1fr;
-    }
-  }
+ 
 }

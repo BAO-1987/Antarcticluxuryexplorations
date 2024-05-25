@@ -13,10 +13,10 @@ body {
   font-weight: var(--fw-400);
   font-style: normal;
   font-size: clamp(16px, 1vw, 20px);
-  line-height: 1.4;
+  line-height: 1.6;
   letter-spacing: 0;
   color: var(--color-white);
-  background-color: var(--color-black);
+  background-color: var(--color-gray-900);
   font-optical-sizing: auto;
   scroll-padding: var(--header-height);
 
@@ -35,16 +35,16 @@ body {
       inset: 0;
     }
 
-    &--decor {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      max-height: 1440px;
+    // &--decor {
+    //   background-position: center;
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   max-height: 1440px;
 
-      &.articles {
-        max-height: 884px;
-      }
-    }
+    //   &.articles {
+    //     max-height: 884px;
+    //   }
+    // }
   }
 
   &.open {
@@ -57,9 +57,8 @@ body {
   }
 }
 
-.section,
-.background {
-  padding: rem(86) 0;
+.section {
+  padding: rem(100) 0;
 
   @include media(tablet-wide) {
     padding: 45px 0;
@@ -70,11 +69,16 @@ body {
   }
 }
 
-.container {
+.container,
+.wrapper {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   width: 100%;
   max-width: var(--container-width);
+}
+
+.wrapper {
+  max-width: 1272px;
 }
 
 .site-container {
@@ -158,8 +162,7 @@ body {
   &::before {
     content: "";
     position: absolute;
-    background: linear-gradient(180deg, rgba(5, 6, 11, 0.19), rgba(5, 6, 11, 0) 50%, rgb(5, 6, 11) 100%),
-      rgba(5, 6, 11, 0.4);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 63.55%, rgba(0, 0, 0, 0.3) 100%);
     inset: 0;
     opacity: 1;
   }
@@ -180,17 +183,8 @@ body {
   max-width: 207px;
 }
 
-.transparent {
-  padding: 100px 39px 150px;
-  mix-blend-mode: difference;
-
-  p {
-    font-weight: var(--fw-300);
-    font-size: clamp(35px, 0.8333rem + 6.0185vi, 100px);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    text-align: center;
-    mix-blend-mode: difference;
-    text-transform: uppercase;
-  }
+.title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 32px;
 }

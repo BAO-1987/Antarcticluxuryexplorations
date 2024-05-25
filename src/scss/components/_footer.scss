@@ -28,16 +28,6 @@
     font-size: 20px;
     color: var(--color-blue-50);
     gap: 11px;
-
-    &::before {
-      content: "";
-      position: relative;
-      background-image: url("../images/icons/mail.svg");
-      background-position: center;
-      background-size: cover;
-      width: 40px;
-      height: 40px;
-    }
   }
 
   &__policy {

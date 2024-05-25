@@ -76,13 +76,13 @@
       inset: 0;
     }
 
-    &::after {
-      @include mask;
+    // &::after {
+    //   @include mask;
 
-      mask-image: url("../images/icons/arrow-small.svg");
-      width: 18px;
-      height: 16px;
-    }
+    //   mask-image: url("../images/icons/arrow-small.svg");
+    //   width: 18px;
+    //   height: 16px;
+    // }
 
     &:hover {
       color: var(--color-blue-200);

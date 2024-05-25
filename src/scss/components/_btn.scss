@@ -1,70 +1,67 @@
 /* stylelint-disable declaration-no-important */
-@use "../utils/functions/" as *;
-@use "../utils/mixins" as *;
+@use "../utils/functions/"as *;
+@use "../utils/mixins"as *;
 
 *[class].btn {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  border-radius: 100px;
-  border: 1px solid var(--color-white);
-  padding: 11px 19px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 15px 26px;
   width: 100%;
   max-width: fit-content;
   font-family: inherit;
-  font-weight: var(--fw-400);
-  font-size: 14px;
-  line-height: 1.25;
-  text-transform: uppercase;
-  color: var(--color-black);
+  font-weight: var(--fw-500);
+  line-height: 1.1;
+  color: var(--color-dark-900);
   background-color: var(--color-white);
   transition-property: background-color, color, border-color;
   transition-duration: 0.3s;
 
   &:hover,
   &:focus {
-    border-color: var(--color-blue-400);
-    color: var(--color-blue-400);
-    background-color: var(--color-white);
+    border-color: var(--color-white);
+    background-color: var(--color-blue-300);
   }
 
   &--request {
-    border-color: transparent;
-    color: var(--color-black) !important;
+    color: var(--color-dark-900) !important;
     background-color: var(--color-white);
 
     &:hover,
     &:focus {
-      border-color: var(--color-blue-400);
-      color: var(--color-blue-400) !important;
-      background-color: var(--color-white);
+      border-color: var(--color-white);
+      background-color: var(--color-blue-300);
     }
   }
 
   &--sign {
+    border-color: currentColor;
     color: var(--color-white);
     background-color: transparent;
   }
 
-  &--arrow {
-    z-index: 1;
-    margin-bottom: 22px;
-    border-color: var(--color-white);
-    color: var(--color-white);
-    background-color: transparent;
-    padding: 12px 20px;
-    gap: 10px;
+  // &--arrow {
+  //   z-index: 1;
+  //   margin-bottom: 22px;
+  //   border-color: var(--color-white);
+  //   color: var(--color-white);
+  //   background-color: transparent;
+  //   padding: 12px 20px;
+  //   gap: 10px;
 
-    &::before {
-      @include mask;
-      width: 18px;
-      height: 18px;
-      mask-image: url("../images/icons/arrow.svg");
-    }
-  }
+  //   &::before {
+  //     @include mask;
+  //     width: 18px;
+  //     height: 18px;
+  //     mask-image: url("../images/icons/arrow.svg");
+  //   }
+  // }
 
   &--big {
-    padding: 12px 47px;
+    padding: 19px 31px;
+    min-width: 225px;
   }
 }
