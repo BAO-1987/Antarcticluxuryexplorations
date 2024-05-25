@@ -1,0 +1,72 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins" as *;
+
+.principal {
+  position: relative;
+  z-index: 1;
+
+  &__list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+    align-self: stretch;
+    padding: 20px;
+    color: var(--color-dark-900);
+    background-color: var(--color-blue-300);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 34px;
+      left: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("../images/icons/conservation.svg");
+      width: 68px;
+      height: 68px;
+    }
+
+    &:first-of-type {
+      padding-top: 33px;
+    }
+
+    &--community {
+      &::before {
+        background-image: url("../images/icons/community.svg");
+      }
+    }
+
+    &--cultural {
+      &::before {
+        background-image: url("../images/icons/cultural.svg");
+      }
+    }
+  }
+
+  &__desc {
+    padding-left: 88px;
+  }
+
+  .title {
+    margin-bottom: 50px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .slogan {
+    margin-bottom: 23px;
+  }
+
+  h3 {
+    margin-bottom: 4px;
+  }
+}

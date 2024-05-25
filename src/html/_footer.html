@@ -1,27 +1,84 @@
 <footer class="footer">
 
-  <div class="footer__image">
-    <img src="./images/footer.png" alt="Luxury Polar Adventure" width="1440" height="143" loading="lazy" />
-  </div>
+  <div class="wrapper">
+    <nav class="nav nav--footer">
+      <a class="logo" href="index.html">
+        <img class="logo__img" src="./images/logo.svg" alt="logo of Antarcticluxuryexplorations" width="207" height="48"
+          loading="lazy" />
+      </a>
 
-    <div class="container">
-      <div class="footer__copy">
-      <a class="footer__link" href="mailto:contact@antarcticluxuryexpeditions.com">contact@antarcticluxuryexpeditions.com</a>
-      
-        <ul class="footer__policy">
-          <li>
-            <a href="privacy-policy.html">
-              Privacy Policy
+      <div class="nav__inner">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'home' }}" href="index.html">
+              Home
             </a>
           </li>
 
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'about' }}" href="about.html">
+              About Us
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'tours' }}" href="tours.html">
+              Tours & Destinations
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'travel' }}" href="travel.html">
+              Travel Information
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'articles' }}" href="articles.html">
+              Articles
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__btns">
+          <a class="btn btn--sign " href="sign-up.html">
+            Sign In
+          </a>
+
+          <button class="btn btn--request" type="button" formsappId="664b4b5b033ee153da4f91a3">
+            Book a trip
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="footer__bottom">
+
+    <div class="wrapper">
+
+      <div class="footer__copy">
+        <p>
+          Antarcticluxuryexplorations.com © 2024. All rights Reserved
+        </p>
+
+        <ul class="footer__policy">
           <li>
             <a href="terms-of-use.html">
               Terms of Use
             </a>
           </li>
+
+          <li>
+            <a href="privacy-policy.html">
+              Privacy Policy
+            </a>
+          </li>
         </ul>
       </div>
+    </div>
   </div>
 
 </footer>

@@ -3,30 +3,29 @@
 @use "../utils/mixins/" as *;
 
 .reviews {
+  padding: 83px 0 86px;
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    width: 100%;
-    max-width: 947px;
+    grid-template-columns: repeat(2, auto);
     gap: 30px;
   }
- 
 
   li {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 30px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
   }
 
+  h3 {
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+  }
 
-h3 {
-  font-size: 26px;
-  line-height: 1;
-  letter-spacing: 0.08em;
-}
-
-
- 
+  p {
+    margin-bottom: 20px;
+  }
 }

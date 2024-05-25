@@ -2,62 +2,77 @@
 @use "../utils/mixins/" as *;
 
 .contacts {
+  position: relative;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   &__inner {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 0;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 1px;
-      background-color: var(--color-white);
-      opacity: 0.2;
-    }
+    left: 0;
+    padding: 42px 50px;
+    width: 100%;
+    max-width: 470px;
+    background-color: rgba(45, 45, 45, 0.5);
   }
 
   &__form {
     display: flex;
-    gap: 16px;
+    flex-direction: column;
+    gap: 11px;
     width: 100%;
-    max-width: 438px;
+    max-width: 100%;
 
-    label {
+    label,
+    textarea {
       border: 0;
       width: 100%;
     }
 
-    input {
+    textarea {
+      min-height: 100px;
+      resize: none;
+    }
+
+    input,
+    textarea {
       overflow: hidden;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 9px 19px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      padding: 11 6px 10px 24px;
       width: 100%;
       max-width: 100%;
-      color: var(--color-gray-50);
-      background-color: transparent;
+      color: var(--color-gray-900);
+      background-color: var(--color-white);
 
       &::placeholder {
-        font-size: 14px;
-        color: var(--color-gray-50);
-        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 1.6;
+        opacity: 0.6;
       }
+    }
+
+    span {
+      display: block;
+      margin-bottom: 17px;
+      line-height: 1.44;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--color-blue-300);
     }
   }
 
-  .subtext {
-    width: 100%;
-    max-width: 610px;
+  h2 {
+    position: absolute;
+    left: 49%;
+    top: 38px;
+    transform: translateX(-50%);
   }
 
-  h2 {
-    margin-bottom: 30px;
-    font-size: clamp(35px, 0.8333rem + 6.0185vi, 100px);
-    line-height: 1.05;
+  .btn {
+    max-width: 100%;
+    color: var(--color-dark-900);
+    background-color: var(--color-blue-300);
   }
 
   @include media(tablet) {

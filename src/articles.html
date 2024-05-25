@@ -5,66 +5,13 @@
 <body class="page__body">
   <div class="site-container">
     <include src="./html/_header.html" locals='{"page": "articles",
-  "header": "header header--colored"}'></include>
+  "header": "header header"}'></include>
 
-    <main class="main main--top">
+    <main class="main ">
 
-      <section class="blog blog--main ">
+      <include src="./html/blog/_hero.html"></include>
 
-        <div class="container">
-
-          <h2>
-            blogs
-          </h2>
-
-          <ul class="blog__list">
-
-            <li class="blog__item overlay overlay--gray">
-              <img src="./images/blog/penguin.png" alt="10 Must-See Wildlife Encounters in Antarctica" width="455"
-                height="557" loading="lazy" />
-
-              <h3>
-                10 Must-See Wildlife Encounters in Antarctica
-              </h3>
-
-              <a href="wildlife.html"></a>
-            </li>
-
-            <li class="blog__item overlay overlay--gray">
-              <img src="./images/blog/iceberg.png" alt="Exploring the Historic Sites of the Antarctic Peninsula"
-                width="455" height="557" loading="lazy" />
-
-              <h3>
-                Exploring the Historic Sites of the Antarctic Peninsula
-              </h3>
-              <a href="antartic.html"></a>
-            </li>
-
-            <li class="blog__item overlay overlay--gray">
-              <img src="./images/hero/capturing.jpg" alt="A Photographer's Guide to Capturing the Beauty of Antarctica"
-                width="455" height="557" loading="lazy" />
-
-              <h3>
-                A Photographer's Guide to Capturing the Beauty of Antarctica
-              </h3>
-              <a href="capturing.html"></a>
-            </li>
-
-            <li class="blog__item overlay overlay--gray">
-              <img src="./images/hero/packing.jpg" alt="The Ultimate Packing List for Your Antarctic Expedition"
-                width="455" height="557" loading="lazy" />
-
-              <h3>
-                The Ultimate Packing List for Your Antarctic Expedition
-              </h3>
-              <a href="packing.html"></a>
-            </li>
-          </ul>
-
-        </div>
-
-      </section>
-
+      <include src="./html/blog/_blog.html"></include>
 
       <include src="./html/_contacts.html"></include>
 

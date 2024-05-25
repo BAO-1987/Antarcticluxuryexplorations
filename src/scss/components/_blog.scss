@@ -2,113 +2,59 @@
 @use "../utils/mixins/" as *;
 
 .blog {
-  position: relative;
-  padding-bottom: 150px;
+  padding: 82px 0;
+
+  &__content {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: 32px;
+    gap: 24px;
+  }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto 38px;
-    z-index: 1;
-    position: relative;
-    width: 100%;
-    max-width: 947px;
-    translate: 0 -38px;
-    gap: 38px;
+    gap: 24px;
   }
 
   &__item {
-    overflow: hidden;
-    border-radius: 10px;
-
-    &:first-of-type {
-      translate: 0 53px;
-    }
-  }
-
-  .subtext {
-    width: 100%;
-    max-width: 667px;
-    translate: 192px 0;
-  }
-
-  h2 {
-    margin-bottom: 0;
     position: relative;
-    z-index: 1;
-    font-size: clamp(1.5625rem, -0.8333rem + 10.6481vi, 8.75rem);
-    line-height: 1.2;
-    letter-spacing: -0.021em;
-    text-align: center;
+    overflow: hidden;
+    border-radius: var(--radius-main);
 
-    span {
-      padding-right: 181px;
-      translate: 0 56px;
-      display: inline-block;
+    a {
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    &:hover {
+      h3 {
+        color: var(--color-blue-300);
+      }
     }
   }
 
   h3 {
     position: absolute;
-    left: 50px;
-    right: 50px;
-    bottom: 50px;
-    text-align: center;
-    text-transform: uppercase;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 32px;
+    backdrop-filter: blur(24px);
+    background-color: rgba(45, 45, 45, 0.4);
+    letter-spacing: 0.011em;
+    transition: color 0.3s linear;
   }
 
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: var(--color-black);
-    border-radius: 50%;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-    }
-
-    // &::after {
-    //   @include mask;
-
-    //   mask-image: url("../images/icons/arrow-small.svg");
-    //   width: 18px;
-    //   height: 16px;
-    // }
-
-    &:hover {
-      color: var(--color-blue-200);
-    }
+  .title {
+    margin-bottom: 0;
   }
 
-  &--main {
-
-    .blog__list {
-      translate: none;
-    }
-
-    .blog__item {
-      min-height: 556px;
-
-      &:first-of-type {
-        translate: none;
-      }
-
-      img {
-        height: 100%;
-      }
-    }
-
-    h2 {
-      margin-bottom: 48px;
-    }
+  .btn {
+    align-self: flex-end;
   }
 }
