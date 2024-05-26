@@ -1,6 +1,6 @@
 /* stylelint-disable declaration-no-important */
-@use "../utils/functions/"as *;
-@use "../utils/mixins"as *;
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
 
 *[class].btn {
   display: flex;
@@ -45,22 +45,26 @@
     background-color: transparent;
   }
 
-  // &--arrow {
-  //   z-index: 1;
-  //   margin-bottom: 22px;
-  //   border-color: var(--color-white);
-  //   color: var(--color-white);
-  //   background-color: transparent;
-  //   padding: 12px 20px;
-  //   gap: 10px;
+  &--arrow {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 22px;
+   justify-content: flex-end;
+    border-color: var(--color-white);
+    background-color: var(--color-white);
+    padding: 20px 32px;
+    min-width: 230px;
 
-  //   &::before {
-  //     @include mask;
-  //     width: 18px;
-  //     height: 18px;
-  //     mask-image: url("../images/icons/arrow.svg");
-  //   }
-  // }
+
+    &::before {
+      @include mask;
+      position: absolute;
+      left: 32px;
+      width: 24px;
+      height: 24px;
+      mask-image: url("../images/icons/arrow.svg");
+    }
+  }
 
   &--big {
     padding: 19px 31px;

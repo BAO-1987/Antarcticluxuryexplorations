@@ -1,5 +1,5 @@
-@use "../utils/functions/"as *;
-@use "../utils/mixins/"as *;
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
 
 .hero {
   $root: &;
@@ -23,7 +23,6 @@
     max-width: 1074px;
     margin: 0 auto;
     padding: 16px 0;
-
   }
 
   h1 {
@@ -31,52 +30,81 @@
   }
 
   .btn {
-    margin: 0 auto;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 20px 32px;
-    min-width: 230px;
-
-  }
-
-  &--double {
-    #{$root}__content {
-      padding-bottom: 61px;
-    }
-
-    #{$root}__inner {
-      &::before {
-        content: none;
-      }
-    }
-
-    h1 {
-      margin: 0 auto 101px;
-      width: 100%;
-      max-width: 864px;
-      font-size: clamp(55px, 2.0833rem + 6.0185vi, 190px);
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+    &:not(.btn--arrow) {
+      margin: 0 auto;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 20px 32px;
+      min-width: 230px;
     }
   }
 
   &--articles {
+    background-size: contain;
+    background-position: top;
+
+    &::before {
+      background: linear-gradient(180deg,  rgba(45, 45, 45, 0), rgb(45, 45, 45) 100%), rgba(5, 6, 11, 0);
+    }
+
     #{$root}__content {
-      padding-bottom: 61px;
+      margin: 0;
+      max-width: 802px;
+      translate: 0 68px;
     }
 
     #{$root}__inner {
-      min-height: 473px;
-
-      &::before {
-        content: none;
-      }
+      position: relative;
+      z-index: 1;
+      min-height: 627px;
+      align-items: flex-start;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(25px, 1.0833rem + 2.1296vi, 48px);
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+      font-size: clamp(30px, 1.3333rem + 2.4074vi, 56px);
+      line-height: 1.21;
+      text-align: left;
+    }
+  }
+
+  @include media(tablet-wide) {
+    &--articles {
+      #{$root}__inner {
+        min-height: 350px;
+      }
+
+      #{$root}__content {
+        translate: 0 32px;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &__inner {
+      min-height: 500px;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__inner {
+      min-height: 400px;
+    }
+
+    &--articles {
+      #{$root}__inner {
+        min-height: 220px;
+      }
+
+      #{$root}__content {
+        translate: 0 60px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .btn {
+        padding: 16px;
+      }
     }
   }
 }

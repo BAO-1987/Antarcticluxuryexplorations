@@ -1,7 +1,9 @@
-@use "../utils/functions/"as *;
-@use "../utils/mixins/"as *;
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
 
 .nav {
+  $root: &;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -16,6 +18,7 @@
 
   &__list {
     display: flex;
+    align-items: center;
     margin: 0 auto;
   }
 
@@ -40,7 +43,6 @@
 
   &__btns {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 31px;
   }
@@ -49,69 +51,30 @@
     padding: 50px 0;
   }
 
-
   @include media(desktop) {
     &__item {
       &:not(:last-child) {
         margin-right: 15px;
       }
     }
-
-    &__list {
-      margin-right: 15px;
-    }
-  }
-
-  @include media(tablet-wide) {
-    &__inner {
-      position: fixed;
-      right: 0;
-      top: 0;
-      z-index: -1;
-      flex-direction: column;
-      justify-content: flex-start;
-      overflow-y: auto;
-      padding-top: calc(var(--header-height) * 1.2);
-      width: 100%;
-      height: var(--vh);
-      max-width: 350px;
-      background-color: var(--color-blue-600);
-      transform: translateX(150%);
-      transition-property: transform;
-      transition-duration: 0.25s;
-    }
-
-    &__list {
-      z-index: -1;
-      flex-direction: column;
-      margin: 0;
-    }
-
-    &__item {
-      margin-bottom: 30px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-    }
-
-    &__link {
-      font-size: 20px;
-    }
   }
 
   @include media(tablet) {
     &--footer {
       padding: 25px 0;
-    }
-  }
-
-  @include media(mobile-l) {
-    &--footer {
       flex-direction: column;
-      align-items: center;
       justify-content: center;
       gap: 25px;
+
+      #{$root}__inner {
+       flex-direction: column;
+       gap: 20px;
+      }
+
+       #{$root}__list {
+       flex-wrap: wrap;
+       justify-content: center;
+      }
     }
   }
 }

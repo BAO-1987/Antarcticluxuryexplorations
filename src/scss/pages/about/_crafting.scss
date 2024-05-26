@@ -25,14 +25,14 @@
     &::before {
       content: "";
       position: absolute;
-      top: 40px;
       left: 30px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("../images/icons/mount.svg");
+      top: 40px;
       width: 108px;
       height: 108px;
+      background-image: url("../images/icons/mount.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 
@@ -42,5 +42,36 @@
 
   .title {
     margin-bottom: 36px;
+  }
+
+  @include media(tablet-wide) {
+    li {
+      padding-right: 10px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      padding: 16px;
+
+      &::before {
+        position: relative;
+        left: 50%;
+        top: 0;
+        display: block;
+        margin-bottom: 15px;
+        width: 60px;
+        height: 60px;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__desc {
+      padding: 0;
+    }
   }
 }

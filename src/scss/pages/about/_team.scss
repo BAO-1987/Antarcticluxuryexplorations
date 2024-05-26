@@ -28,14 +28,14 @@
     &::before {
       content: "";
       position: absolute;
-      top: 43px;
       left: 30px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("../images/icons/guide.svg");
+      top: 43px;
       width: 108px;
       height: 108px;
+      background-image: url("../images/icons/guide.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 
@@ -57,5 +57,70 @@
 
   img {
     margin-bottom: 48px;
+    width: 100%;
+  }
+
+  @include media(tablet) {
+    padding: 40px 0;
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      padding: 10px;
+
+      &:last-child {
+        grid-column: 2 span;
+
+        img {
+          aspect-ratio: 2/1;
+        }
+      }
+    }
+
+    img {
+      margin-bottom: 24px;
+    }
+
+    .title {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      img {
+        aspect-ratio: 2/1;
+      }
+
+      &:last-child {
+        grid-column: auto;
+      }
+    }
+
+    &__content {
+      padding: 16px;
+
+      &::before {
+        position: relative;
+        left: 50%;
+        top: 0;
+        display: block;
+        margin-bottom: 15px;
+        width: 60px;
+        height: 60px;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__desc {
+      padding: 0;
+    }
   }
 }

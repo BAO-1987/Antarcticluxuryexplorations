@@ -2,6 +2,17 @@
 @use "../utils/mixins/" as *;
 
 .articles {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(45, 45, 45, 0), rgb(45, 45, 45) 100%), rgba(5, 6, 11, 0);
+    inset: 0;
+  }
+
   h2 {
     margin-bottom: 24px;
     font-size: clamp(1.25rem, 1rem + 1.1111vi, 2rem);

@@ -63,4 +63,42 @@
       width: 436px;
     }
   }
+
+  @include media(tablet-wide) {
+    #{$root}__image {
+      --margin: 50px;
+      width: 650px;
+    }
+  }
+
+  @include media(tablet) {
+    #{$root}__wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      margin: 0;
+      padding: 16px;
+      gap: 30px;
+    }
+
+    #{$root}__image {
+      width: 100%;
+      margin: 0;
+
+      img {
+        aspect-ratio: 2/1;
+        width: 100%;
+      }
+    }
+
+    #{$root}__content {
+      width: 100%;
+    }
+  }
+
+  @include media(mobile-l) {
+    .btn {
+      max-width: 100%;
+    }
+  }
 }

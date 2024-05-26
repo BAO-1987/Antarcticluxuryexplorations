@@ -31,6 +31,10 @@
       }
     }
 
+    img {
+      width: 100%;
+    }
+
     &:hover {
       h3 {
         color: var(--color-blue-300);
@@ -56,5 +60,42 @@
 
   .btn {
     align-self: flex-end;
+  }
+
+  &--main {
+    .title {
+      margin-bottom: 32px;
+    }
+  }
+
+  @include media(tablet) {
+    padding: 40px 0;
+  }
+
+  @include media(mobile-l) {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      img {
+        min-height: 250px;
+        aspect-ratio: 2/1;
+      }
+    }
+
+    h3 {
+      padding: 16px;
+    }
+  }
+
+  @include media(mobile-m) {
+    .btn {
+      max-width: 100%;
+    }
   }
 }

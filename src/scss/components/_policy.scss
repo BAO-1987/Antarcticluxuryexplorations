@@ -9,14 +9,14 @@
   }
 
   h1 {
-    margin-bottom: 71px;
-    text-align: center;
+    margin-bottom: 48px;
+    font-size: clamp(28px, 1.3333rem + 2.4074vi, 56px);
+    text-align: left;
   }
 
   h2 {
     margin-bottom: 24px;
-    font-size: clamp(25px, 1.0417rem + 0.9259vi, 30px);
-    color: var(--color-blue-200);
+    font-size: clamp(20px, 0.5rem + 1.6667vi, 32px);
   }
 
   ul {
@@ -33,7 +33,7 @@
 
     &::marker {
       content: "✓";
-      color: var(--color-blue-400);
+      color: var(--color-blue-300);
     }
   }
 
@@ -43,13 +43,9 @@
     }
   }
 
-  li {
-    font-size: 18px;
-  }
-
   a {
     text-decoration: underline;
-    color: var(--color-blue-200);
+    color: var(--color-blue-300);
   }
 
   @include media(tablet) {

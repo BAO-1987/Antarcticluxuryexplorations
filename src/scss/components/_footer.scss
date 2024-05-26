@@ -17,6 +17,14 @@
     display: flex;
     justify-content: space-between;
     gap: 100px;
+
+    a {
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: var(--color-blue-300);
+      }
+    }
   }
 
   @include media(mobile-l) {

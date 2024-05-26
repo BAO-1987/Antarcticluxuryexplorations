@@ -20,9 +20,9 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 11px;
     width: 100%;
     max-width: 100%;
+    gap: 11px;
 
     label,
     textarea {
@@ -66,6 +66,7 @@
     position: absolute;
     left: 49%;
     top: 38px;
+    z-index: 1;
     transform: translateX(-50%);
   }
 
@@ -75,17 +76,22 @@
     background-color: var(--color-blue-300);
   }
 
-  @include media(tablet) {
+  @include media(tablet-wide) {
+    h2 {
+      top: 10px;
+    }
   }
 
   @include media(mobile-l) {
     input,
     textarea {
-      padding: 16px;
+      padding: 10px;
     }
+  }
 
-    textarea {
-      min-height: 130px;
+  @include media(mobile-m) {
+    h2 {
+      font-size: 28px;
     }
   }
 }

@@ -8,8 +8,8 @@
   &__list {
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
@@ -23,14 +23,14 @@
     &::before {
       content: "";
       position: absolute;
-      top: 34px;
       left: 20px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("../images/icons/conservation.svg");
+      top: 34px;
       width: 68px;
       height: 68px;
+      background-image: url("../images/icons/conservation.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     &:first-of-type {
@@ -68,5 +68,28 @@
 
   h3 {
     margin-bottom: 4px;
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      padding: 16px;
+
+      &::before {
+        position: relative;
+        display: block;
+        margin-bottom: 15px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__desc {
+      padding: 0;
+    }
   }
 }
